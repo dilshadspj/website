@@ -1,0 +1,472 @@
+</html>
+<head>
+  	<title> MY MANUU </title>
+</head>
+<body> 
+
+ <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+      font-family: "ubuntu";
+    }
+
+    img {
+      width: 100%;
+    }
+
+    header {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      background: #0b2239;
+    }
+
+    header .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    header .header-left .logo {
+      width: 140px;
+    }
+
+    header .header-left nav {
+      margin-left: 50px;
+    }
+
+    header .header-left nav ul {
+      display: flex;
+    }
+
+    nav ul li a {
+      display: block;
+      color: #d7cfe0;
+      font-size: 18px;
+      padding: 5px 10px;
+      transition: 0.2s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: rgb(204, 255, 0);
+    }
+
+    nav .login-signup {
+      display: none;
+    }
+
+    header .header-right {
+      display: flex;
+      align-items: center;
+    }
+
+    header .login-signup {
+      color: #e0d7cf;
+      font-weight: bold;
+    }
+
+    header .login-signup a {
+      display: inline-block;
+      color: rgb(255, 255, 255);
+      background:blue;
+      padding: 5px 12px;
+      border-radius: 5px;
+    }
+
+    header .login-signup a:hover {
+      display: inline-block;
+      color: white;
+      background: red;
+      padding: 5px 12px;
+      border-radius: 5px;
+    }
+
+    header .header-right .hamburger {
+      margin-left: 20px;
+      cursor: pointer;
+      display: none;
+    }
+
+    header .header-right .hamburger div {
+      width: 30px;
+      height: 2px;
+      margin: 6px 0;
+      background: #fff;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      header {
+        padding: 0 20px;
+      }
+
+      header .header-right .hamburger {
+        display: block;
+      }
+
+      header .header-left nav {
+        margin: 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color: #0b2239;
+        padding: 30px;
+        transition: 0.3s;
+        text-align: center;
+        z-index: -1;
+      }
+
+      header .header-left nav.active {
+        top: 70px;
+      }
+
+      header .header-left nav ul {
+        display: block;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      nav .login-signup {
+        display: block;
+        margin-top: 20px;
+      }
+
+      header .header-right .login-signup {
+        display: none;
+      }
+    }
+
+    .banner {
+      height: 400px;
+      width: 100%;
+      background-image: url(pexels-veeterzy-303383.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .banner-text h1 {
+      padding: 150px;
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      text-align: center;
+      font-size: 60px;
+      color:red;
+      text-shadow: 3px 3px 0 #ccc, 5px 5px 0 #999;
+    }
+
+    .main {
+      background-image: url(/task-7/iconic.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 2px;
+      padding: 0;
+      border: 5px solid #000000b5;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 2px solid aqua;
+      width: 20%;
+      display: inline-block;
+      box-shadow: 2px 2px 20px black;
+      border-radius: 5px;
+      margin: 2%;
+    }
+
+    .image img {
+      border: 2px solid black;
+      border-radius: 10px;
+      height: 300px;
+      width: 100%;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+
+    .title {
+
+      text-align: center;
+      padding: 10px;
+
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .des {
+      padding: 3px;
+      text-align: center;
+      padding-top: 10px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    button {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      background-color: blue;
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    button:hover {
+      background-color: red;
+      color: white;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    footer {
+      color: #fff;
+      bottom: 0px;
+      width: 100%;
+      background: #0b2239;
+    }
+
+    .main-content {
+      display: flex;
+    }
+
+    .main-content .box {
+      flex-basis: 50%;
+      padding: 10px 20px;
+    }
+
+    .box h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .box .content {
+      margin: 20px 0 0 0;
+      position: relative;
+    }
+
+    .box .content:before {
+      position: absolute;
+      content: '';
+      top: -10px;
+      height: 2px;
+      width: 100%;
+    }
+
+    .box .content:after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 15%;
+      background: #f12020;
+      top: -10px;
+    }
+
+    .left .content p {
+      text-align: justify;
+    }
+
+    .left .content .social {
+      margin: 20px 0 0 0;
+    }
+
+    .left .content .social a {
+      padding: 0 2px;
+    }
+
+    .left .content .social a span {
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      line-height: 40px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .left .content .social a span:hover {
+      background: #f12020;
+    }
+
+    .center .content .fas {
+      font-size: 1.4375rem;
+      background-color: greenyellow;
+      height: 45px;
+      width: 45px;
+      line-height: 45px;
+      text-align: center;
+      border-radius: 50%;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .center .content .fas:hover {
+      background: blue;
+    }
+
+    .center .content .text {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      padding-left: 10px;
+    }
+
+    .center .content .phone {
+      margin: 15px 0;
+    }
+
+    .right form .text {
+      font-size: 1.0625rem;
+      margin-bottom: 2px;
+      color: white;
+    }
+
+    .right form .msg {
+      margin-top: 10px;
+    }
+
+    .right form input,
+    .right form textarea {
+      width: 100%;
+      font-size: 1.0625rem;
+      background: white;
+      padding-left: 10px;
+      border: 1px solid #222222;
+    }
+
+    .right form input:focus,
+    .right form textarea:focus {
+      outline-color: #3498db;
+    }
+
+    .right form input {
+      height: 35px;
+    }
+
+    .right form .btn {
+      margin-top: 10px;
+    }
+
+    .right form .btn button {
+      height: 40px;
+      width: 100%;
+      border: none;
+      outline: none;
+      background: blue;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .right form .btn button:hover {
+      background: red;
+    }
+
+    .bottom center {
+      padding: 5px;
+      font-size: 0.9375rem;
+      background: black;
+    }
+
+    .bottom center span {
+      color: white;
+    }
+
+    .bottom center a {
+      color: #f12020;
+      text-decoration: none;
+    }
+
+    .bottom center a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 500px) {
+      footer {
+        position: relative;
+        bottom: 0px;
+      }
+
+      .main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      .main-content .box {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <nav>
+        <ul>
+          <li>
+            <a href="manuu.home.com" class="active">Home</a>
+          </li>
+          <li>
+            <a href="manuu.about.com">About us</a>
+          </li>
+          <li>
+            <a href="">Contact us</a>
+          </li>
+          <li>
+            <a href="">Help</a>
+          </li>
+
+        </ul>
+        <div class="login-signup">
+          <a href="">Signin</a> or <a href="SIGNUP.HTML">Signup</a>
+        </div>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="login-signup">
+        <a href="">signin</a> or <a href="">Signup</a>
+      </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+<body background="IMG20230224172301.jpg"style="background-repeat:no-repeat;background-size:100%100%">
+
+<h1 style="text-align:center;color:red"><b><u>Maulana Azad National Urdu University</u></b></h1>
+
+<h1 style="text-align:center;color:blue"> THIS IS MANUU </h1>
+<h1 style="color:RED"><b> ABOUT THE MANUU </b></h1>
+<p style="background-color:green;border:3px solid"> 1. Maulana azad national urdu university (MANUU) is<b><u style="color:red"> a central university estabilished by an act of parlimant in 1998.</b></u> </p>
+<p style="color:blue;background-color:green; 3px "><b> 2. The headquarter and main campus of MANUU is located in<b> <i>Gachibowli, Hyderabad, Telangana State, over an area of  200 acres.</i></b> </p>
+<p style="color:red; background-color: green;border:groove"><b> 3. The students and staff of the university are drawn from throughout india.They are attracted by its commitment to excellence in quality urdu education in all disciplines of  knowledge.</b> </p>
+<p style="color:lime;border:2px ridge"><bb>4.The University has a satellite campus in Lucknow and a campus at Srinagar (Jammu and Kashmir). There are Colleges of Teacher Education in Bhopal, Darbhanga, Srinagar, Aurangabad, Sambhal, Asansol, Nuh, Bidar which are guided through School of Education and Training. The University runs four Polytechnic Colleges in Bengaluru, Darbhanga, Hyderabad and Cuttack; four ITIs in Bengaluru, Darbhanga, Hyderabad and Cuttack; and three Urdu Model Schools in Darbhanga, Hyderabad and Nuh (Meewat)</b> </p>
+<h1 style="color:black"><b>School of Languages, Linguistics & Indology</b></h1>
+<p style="color:coral;border:3PX SOLID">
+1.<A HREF="https://manuu.edu.in/University/SLLI/Arabic/Contact">Department of Arabic</A><br>
+2.<A HREF="https://manuu.edu.in/University/SLLI/English/People">Department of English</A><br>
+3.<A HREF="https://manuu.edu.in/University/SLLI/Hindi/Profile">Department of Hindi</A><br>
+4.<A HREF="https://manuu.edu.in/University/SLLI/Persian/Profile">Department of Persian</A><br>
+5.<A HREF="https://manuu.edu.in/University/SLLI/Urdu/People/43">Department of Urdu</A><br>
+6.<A HREF="https://manuu.edu.in/dde/program/languages/translation/MA-Translation-Studies">Department of Translation studies</A> </p>
+<h4 style="color:rgb(255,255,255)"><b>Link of MANUU Website </h4>
+<p style="color:turquoise"><a href="https://www.manuu.ac.in/"target_blank">click here </a>and go to MANUU home page.</p>
+<h5 style="color:yellow; height:30px: width:20px"><big>Use hyperlink in manuu logo</big> </h5>
+<p style="color:turquoise"> click on manuu logo<a href="https://www.manuu.ac.in/"target_blank"> <img src="download logo manuuu.png"style=" height:100px; width:80px"></a> and go to manuu website </p>
+<h1 style="color:yellow">Tarana of MANUU </h1>
+<iframe width="618" height="409" src="https://www.youtube.com/embed/vPxUymY8hNk" title="MANUU Tarana (Anthem of Maulana Azad National Urdu University) Complete Anthem" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+
+        <button><a href="file:///C:/Users/acer/Desktop/successful.html">next page</a></button>
+</body>
+</html>
